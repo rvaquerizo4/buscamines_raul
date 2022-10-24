@@ -1,9 +1,16 @@
 <html>
     <head> </head>
     <body>
-        <button type='submit' id='crearTabla' onclick="crearTabla()">Crear Tabla</button>
+        <button type='submit' id='crearTabla' onclick="inicialitzaJoc()">Crear Tabla</button>
         <input type="number" id="i1">
         <input type="number" id="i2">
+        <br>
+        <br>
+        <div>
+            <table id="tblDatos" border="1"></table>
+        </div>
+        <button type='submit' id='rellenar' onclick="matriuBinaria(matrix)">rellenar</button>
+        
     </body>
     <script src="matrius.js"></script>
     <script src="test.js"></script>
