@@ -1,10 +1,12 @@
-let inputValue = document.getElementById("i1").value;
-let inputValue2 = document.getElementById("i2").value;
+let matrix = [];
+let filas = document.querySelector("tbody").children
+for (var i = 0; i < rows.length; i++) {
+    matrix.push(rows[i].children)
+}
 
 async function inicialitzaJoc(){
-    //eraser();
-    let filas = parseInt(inputValue);
-    let columnas = parseInt(inputValue2);
+    let filas = document.getElementById("i1").valueAsNumber;
+    let columnas = document.getElementById("i1").valueAsNumber;
     let contenido = "&nbsp;";
     for (let i = 0; i < filas; i++){
         let filaActual = document.getElementById('tblDatos').insertRow(i);
@@ -12,34 +14,42 @@ async function inicialitzaJoc(){
         for (let j = 0; j < columnas; j++){
             let celda = filaActual.insertCell(j);
 
-            matrix = celda.innerHTML = contenido;
+            celda.innerHTML = contenido;
         }
     }
-    return matrix;
+        filas = document.querySelector("tbody").children
+        for (var i = 0; i < filas.length; i++) {
+            matrix.push(filas[i].children);
+        }
 }
-
 
 function matriuBinaria(matrix) {
     var matrix2 =[];
-    var a = [];
     for (var i = 0; i < matrix.length; i++) {
+        let filas=[];
         for (var j = 0; j < matrix[0].length; j++) {
-            a.push(5);
+           if (matrix[i][j].style.backgroundColor == "red")
+            filas.push(1);
+           else
+            filas.push(0);
         }
+        matrix2.push(filas);
     }
     return matrix2;
 }
 
-/* async function eraser(){
-    let filas = parseInt(inputValue);
-    let columnas = parseInt(inputValue2);
-    for (let i = 0; i < filas; i++){
-        let filaActual = document.getElementById('tblDatos').deleteRow(i)
-
-        for (let j = 0; j < columnas; j++){
-            let celda = filaActual.deleteCell(j);
-
-            celda.innerHTML = contenido;
+function paintCheckerboard() {
+    let filas = document.querySelector("tbody").children
+    let matrix = []
+    for (var i = 0; i < filas.length; i++) {
+        matrix.push(filas[i].children)
+    }
+    for (let i=0; i < matrix.length; i++) {
+        for (let j=0; j < matrix[0].length; j++) {
+            if((j%2) == 0 && (i%2) == 0)
+            matrix[i][j].style.backgroundColor = "red";
+            else if((j%2) != 0 && (i%2) != 0)
+            matrix[i][j].style.backgroundColor = "red";
         }
     }
-} */
+}
