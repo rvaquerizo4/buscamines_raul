@@ -61,6 +61,18 @@ function inicialitzaMines(MinesIntroduides, i1, i2) {
     return matriu;
 }
 
+function iniJoc() {
+    inicialitzaJoc();
+    let MinesIntroduides = document.getElementById("MinesIntroduides").valueAsNumber;
+    let i1 = document.getElementById("i1").valueAsNumber;
+    let i2 = document.getElementById("i2").valueAsNumber;
+
+    minas2 = inicialitzaMines(MinesIntroduides, i1, i2);
+    Imines(minas2);
+
+}
+
+
 let minas2;
 function Imines(minas2) {
     let taula = document.getElementsByTagName("tbody")[0];
@@ -74,13 +86,3 @@ function Imines(minas2) {
 }
 
 
-function iniJoc() {
-    inicialitzaJoc();
-    let MinesIntroduides = document.getElementById("MinesIntroduides").valueAsNumber;
-    let i1 = document.getElementById("i1").valueAsNumber;
-    let i2 = document.getElementById("i2").valueAsNumber;
-
-    minas2 = inicialitzaMines(MinesIntroduides, i1, i2);
-    Imines(minas2);
-
-}
