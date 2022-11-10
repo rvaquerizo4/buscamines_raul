@@ -1,18 +1,21 @@
 <html>
-    <head> </head>
+    <head> 
+        <title>Buscaminas</title>
+    </head>
     <body>
-        <button type='submit' id='crearTabla' onclick="inicialitzaJoc()">Crear Tabla</button>
+        <!-- <button type='submit' id='crearTabla' onclick="inicialitzaJoc()">Crear Tabla</button> -->
+
         <input type="number" id="i1">
         <input type="number" id="i2">
+        <label for="MinesIntroduides">Introdueix el numero de mines</label>
+        <input type="number" id="MinesIntroduides">        
+        <button type='submit' id='minas' onclick="iniJoc()">Inicia el juego</button>
         <br>
         <br>
-        <div>
+        <div id="tabla">
             <table id="tblDatos" border="1"></table>
         </div>
         <!-- <button type='submit' id='rellenar' onclick="matriuBinaria(matrix)">matriuBinaria</button> -->
-        <label for="MinesIntroduides">Introdueix el numero de mines</label>
-        <input type="number" id="MinesIntroduides">
-        <button type='submit' id='minas' onclick="function iniJoc()">minas</button>
 
     </body>
     <script src="matrius.js"></script>
