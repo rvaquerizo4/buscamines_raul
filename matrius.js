@@ -5,6 +5,11 @@ for (var i = 0; i < rows.length; i++) {
 }
 
 async function inicialitzaJoc(){
+    let matrix = [];
+    let filas = document.querySelector("tbody").children
+    for (var i = 0; i < rows.length; i++) {
+        matrix.push(rows[i].children)
+    }
     let filas = document.getElementById("i1").valueAsNumber;
     let columnas = document.getElementById("i1").valueAsNumber;
     let contenido = "&nbsp;";
@@ -61,28 +66,30 @@ function inicialitzaMines(MinesIntroduides, i1, i2) {
     return matriu;
 }
 
-function iniJoc() {
+let minas;
+function rellenar(minas) {
+    let tablamatriu = document.getElementsByTagName("tbody")[0];
+    for (let i = 0; a < mines.length; i++) {
+        for (let j = 0; j < mines[0].length; j++) {
+            if (mines[i][j] == 1) {
+                tablamatriu.children[i].children[j].style.backgroundColor = "red";
+
+            }
+        }
+    }
+}
+
+function comienzaJoc() {
     inicialitzaJoc();
     let MinesIntroduides = document.getElementById("MinesIntroduides").valueAsNumber;
     let i1 = document.getElementById("i1").valueAsNumber;
     let i2 = document.getElementById("i2").valueAsNumber;
 
-    minas2 = inicialitzaMines(MinesIntroduides, i1, i2);
-    Imines(minas2);
-
+    minas = inicialitzaMines(MinesIntroduides, i1, i2);
+    rellenar(minas);
 }
 
 
-let minas2;
-function Imines(minas2) {
-    let taula = document.getElementsByTagName("tbody")[0];
-    for (let i = 0; i < minas2.length; i++) {
-        for (let j = 0; j < minas2[0].length; j++) {
-            if (minas2[i][j] == 1) {
-                taula.children[i].children[j].style.backgroundColor = "red";
-            }
-        }
-    }
-}
+
 
 
